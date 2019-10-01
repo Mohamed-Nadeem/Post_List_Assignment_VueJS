@@ -41,24 +41,36 @@ export default {
 </script>
 
 <style>
-.post-lists-li {
+.postId {
+  display: inline-flex !important;
+  margin-right: 3%;
+}
+
+.postTitle {
+  display: inline-flex;
+  margin-right: 3%;
+  text-align: justify;
+  width: 84%;
+}
+
+li.list-group-item.post-lists-li {
   margin-bottom: 2%;
   transition: all 0.4s ease-out;
   opacity: 1;
 }
 
-.post-lists-li:hover {
+li.list-group-item.post-lists-li:hover {
   z-index: 2;
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
 }
 
-.list-group {
+ul.list-group {
   margin-top: 1%;
 }
 
-.time-button-class {
+button.btn.btn-primary.time-button-class {
   margin-left: -9%;
 }
 </style>

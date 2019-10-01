@@ -4,7 +4,7 @@
     <div class="temper-main-class">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 sortable-list">
             <span class="labels-col">Sortable List</span>
             <div>
               <PostListWrapper
@@ -13,7 +13,7 @@
               />
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 prev-step">
             <span class="labels-col">Go to previous step</span>
             <ol id="timeTravelList">
               <li
@@ -51,7 +51,8 @@ import _ from 'lodash'
 export default {
   name: 'TemperMain',
   props: {
-    msg: String
+    msg: String,
+    posts: Array
   },
   components: {
     PostListWrapper
@@ -60,15 +61,11 @@ export default {
     return {
       history: [
         {
-          items: [
-            { id: 1, title: 'Post 1', bgColor: '#f9cb9c' },
-            { id: 2, title: 'Post 2', bgColor: '#fee599' },
-            { id: 3, title: 'Post 3', bgColor: '#e06666' },
-            { id: 4, title: 'Post 4', bgColor: '#b6d7a7' }
-          ]
+          items: this.posts
         }
       ],
-      stepNumber: 0
+      stepNumber: 0,
+      items: this.posts
     }
   },
   methods: {
